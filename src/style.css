@@ -36,6 +36,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  
 }
 
 /* Typography */
@@ -701,6 +702,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive Design */
+/* Для мобільних пристроїв */
+@media (max-width: 768px) {
+  .hero,
+  .main-content,
+  main > section:first-child {
+    padding-top: 100px !important; /* Збільште це значення при потребі */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero,
+  .main-content, 
+  main > section:first-child {
+    padding-top: 120px !important; /* Для дуже маленьких екранів */
+  }
+}
+
 @media (max-width: 968px) {
   .footer-content {
     grid-template-columns: 1fr 1fr;
