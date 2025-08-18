@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         element: document.querySelector(".stat:nth-child(2) .stat-number"),
-        target: 1000,
+        target: 250,
         suffix: "+",
       },
       {
@@ -456,6 +456,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const pulseStyleSheet = document.createElement("style");
   pulseStyleSheet.textContent = pulseStyles;
   document.head.appendChild(pulseStyleSheet);
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // блокуємо стандартне відправлення
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("formMessage").innerHTML =
+        '<p class="success-message">✅ Форма успішно відправлена!</p>';
+      form.reset(); // очистка форми
+    } else {
+      document.getElementById("formMessage").innerHTML =
+        '<p class="error-message">❌ Сталася помилка. Спробуйте ще раз.</p>';
+    }
+  }).catch(error => {
+    document.getElementById("formMessage").innerHTML =
+      '<p class="error-message">⚠️ Помилка зʼєднання.</p>';
+  });
+});
 
   console.log(
     'Сайт адвокатського об\'єднання "Правовий захист" завантажено успішно!'

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Адвокатське об'єднання "Альбатраст"
+      Адвокатське об'єднання "Правовий захист" - Професійна юридична допомога
     </title>
     <meta
       name="description"
@@ -15,6 +15,12 @@
       content="адвокат, юрист, правова допомога, суд, консультація, адвокатське об'єднання"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -22,8 +28,19 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <h1>Альбатраст</h1>
-            <p>Адвокатське об'єднання</p>
+            <div class="logo-icon">
+              <img
+                src="src/imeges/logo.jpg"
+                alt="Адвокатське об'єднання 'Альбатраст'"
+                class="logo-image"
+                width="60"
+                height="60"
+              />
+            </div>
+            <div class="logo-text">
+              <h1>Альбатраст</h1>
+              <p>Адвокатське об'єднання</p>
+            </div>
           </div>
           <nav class="nav">
             <ul class="nav-menu" id="navMenu">
@@ -45,11 +62,16 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+      <div class="hero-background">
+        <div class="hero-pattern"></div>
+      </div>
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
+            <!-- <div class="hero-badge">Понад 15 років досвіду</div> -->
             <h2 class="hero-title">
-              Професійний юридичний захист ваших інтересів
+              Професійний юридичний захист
+              <span class="text-accent">ваших інтересів</span>
             </h2>
             <p class="hero-description">
               Ми надаємо кваліфіковану правову допомогу у всіх сферах права.
@@ -57,19 +79,86 @@
               інтереси в будь-якій правовій ситуації.
             </p>
             <div class="hero-buttons">
-              <a href="#contact" class="btn btn-primary"
-                >Безкоштовна консультація</a
-              >
-              <a href="tel:+380501234567" class="btn btn-secondary"
-                >Зателефонувати</a
-              >
+              <a href="#contact" class="btn btn-primary">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 15.46L15.73 14.93C15.65 14.92 15.58 14.92 15.5 14.93C15.3 14.95 15.11 15.05 14.97 15.2L12.74 17.35C9.87 15.9 7.1 13.14 5.65 10.27L7.8 8.03C8.05 7.78 8.15 7.42 8.07 7.08L7.54 1.81C7.5 1.34 7.12 1 6.65 1H2.42C1.83 1 1.32 1.42 1.35 2.01C1.83 13.73 10.27 22.17 22 22.65C22.58 22.68 23 22.17 23 21.58V17.35C23 16.88 22.66 16.5 22.19 16.46L21 15.46Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                Безкоштовна консультація
+              </a>
+              <a href="tel:+380501234567" class="btn btn-secondary">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                Зателефонувати зараз
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number">250+</div>
+                <div class="stat-text">успішних справ</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-text">позитивних рішень</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-text">підтримка</div>
+              </div>
             </div>
           </div>
           <div class="hero-image">
             <div class="hero-card">
-              <div class="card-icon">⚖️</div>
-              <h3>Понад 15 років досвіду</h3>
-              <p>Успішно вирішено більше 1000 справ</p>
+              <div class="card-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M19 15L20.09 21.26L27 22L20.09 22.74L19 29L17.91 22.74L11 22L17.91 21.26L19 15Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M5 15L6.09 21.26L13 22L6.09 22.74L5 29L3.91 22.74L-3 22L3.91 21.26L5 15Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <h3>Найвища якість послуг</h3>
+              <p>
+                Індивідуальний підхід до кожного клієнта та гарантія результату
+              </p>
             </div>
           </div>
         </div>
@@ -80,20 +169,44 @@
     <section id="services" class="services">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Наші послуги</h2>
+          <div class="section-badge">Експертиза</div>
+          <h2 class="section-title">
+            Наші <span class="text-accent">послуги</span>
+          </h2>
           <p class="section-description">
-            Комплексна юридична допомога у всіх галузях права
+            Комплексна юридична допомога у всіх галузях права від провідних
+            спеціалістів
           </p>
         </div>
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">🏛️</div>
+            <div class="service-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L22 8.5V15.5L12 22L2 15.5V8.5L12 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path
+                  d="M12 8V16M8 10L16 14M8 14L16 10"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
             <h3>Цивільне право</h3>
             <p>
               Захист майнових та немайнових прав, договірні відносини, спадкове
               право, сімейні спори
             </p>
-            <ul>
+            <ul class="service-list">
               <li>Договори купівлі-продажу</li>
               <li>Спадкові справи</li>
               <li>Сімейні спори</li>
@@ -101,13 +214,33 @@
             </ul>
           </div>
           <div class="service-card">
-            <div class="service-icon">🚔</div>
+            <div class="service-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path
+                  d="M12 7V12L16 16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
             <h3>Кримінальне право</h3>
             <p>
               Захист підозрюваних, обвинувачених та потерпілих у кримінальних
               провадженнях
             </p>
-            <ul>
+            <ul class="service-list">
               <li>Представництво в суді</li>
               <li>Досудове слідство</li>
               <li>Апеляційне оскарження</li>
@@ -115,13 +248,33 @@
             </ul>
           </div>
           <div class="service-card">
-            <div class="service-icon">🏢</div>
+            <div class="service-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 9L12 2L21 9V20C21 20.55 20.55 21 20 21H4C3.45 21 3 20.55 3 20V9Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path
+                  d="M9 21V12H15V21"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
             <h3>Господарське право</h3>
             <p>
               Юридичне супроводження бізнесу, господарські спори, корпоративне
               право
             </p>
-            <ul>
+            <ul class="service-list">
               <li>Реєстрація бізнесу</li>
               <li>Господарські договори</li>
               <li>Банкрутство</li>
@@ -129,10 +282,30 @@
             </ul>
           </div>
           <div class="service-card">
-            <div class="service-icon">🏠</div>
+            <div class="service-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 21V5C19 3.9 18.1 3 17 3H7C5.9 3 5 3.9 5 5V21L12 18L19 21Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path
+                  d="M9 9H15M9 13H15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
             <h3>Нерухомість</h3>
             <p>Супроводження угод з нерухомістю, вирішення земельних питань</p>
-            <ul>
+            <ul class="service-list">
               <li>Купівля-продаж нерухомості</li>
               <li>Земельні питання</li>
               <li>Приватизація</li>
@@ -140,10 +313,32 @@
             </ul>
           </div>
           <div class="service-card">
-            <div class="service-icon">👨‍💼</div>
+            <div class="service-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 21V19C20 16.79 18.21 15 16 15H8C5.79 15 4 16.79 4 19V21"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="12"
+                  cy="7"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+            </div>
             <h3>Трудове право</h3>
             <p>Захист трудових прав працівників та роботодавців</p>
-            <ul>
+            <ul class="service-list">
               <li>Трудові спори</li>
               <li>Незаконне звільнення</li>
               <li>Заробітна плата</li>
@@ -151,13 +346,33 @@
             </ul>
           </div>
           <div class="service-card">
-            <div class="service-icon">🛡️</div>
+            <div class="service-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path
+                  d="M8 12L11 15L16 9"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
             <h3>Адміністративне право</h3>
             <p>
               Захист прав у відносинах з органами влади та місцевого
               самоврядування
             </p>
-            <ul>
+            <ul class="service-list">
               <li>Адміністративні правопорушення</li>
               <li>Оскарження рішень влади</li>
               <li>Ліцензування</li>
@@ -173,40 +388,95 @@
       <div class="container">
         <div class="about-content">
           <div class="about-text">
-            <h2>Про наше об'єднання</h2>
-            <p>
-              Адвокатське об'єднання "Правовий захист" - це команда досвідчених
+            <div class="section-badge">Наша історія</div>
+            <h2>Про наше <span class="text-accent">об'єднання</span></h2>
+            <p class="about-intro">
+              Адвокатське об'єднання "Альбатраст" - це команда досвідчених
               юристів, які об'єдналися для надання найякіснішої правової
               допомоги.
             </p>
             <div class="about-features">
               <div class="feature">
-                <div class="feature-icon">📋</div>
+                <div class="feature-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 11H15M9 15H15M17 21H7C5.9 21 5 20.1 5 19V5C5 3.9 5.9 3 7 3H12L19 10V19C19 20.1 18.1 21 17 21Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
                 <div class="feature-content">
                   <h4>Індивідуальний підхід</h4>
                   <p>
                     Кожна справа для нас унікальна, ми розробляємо персональну
-                    стратегію захисту
+                    стратегію захисту для досягнення найкращого результату
                   </p>
                 </div>
               </div>
               <div class="feature">
-                <div class="feature-icon">⏰</div>
+                <div class="feature-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M12 7V12L16 16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
                 <div class="feature-content">
                   <h4>Цілодобова підтримка</h4>
                   <p>
-                    Ми завжди на зв'язку та готові надати допомогу у критичних
-                    ситуаціях
+                    Ми завжди на зв'язку та готові надати кваліфіковану допомогу
+                    у критичних правових ситуаціях
                   </p>
                 </div>
               </div>
               <div class="feature">
-                <div class="feature-icon">💼</div>
+                <div class="feature-icon">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2L22 8.5V15.5L12 22L2 15.5V8.5L12 2Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M12 8V16M8 10L16 14M8 14L16 10"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
                 <div class="feature-content">
                   <h4>Комплексні рішення</h4>
                   <p>
-                    Повний спектр юридичних послуг від консультації до
-                    представництва в суді
+                    Повний спектр юридичних послуг від первинної консультації до
+                    представництва у найвищих інстанціях
                   </p>
                 </div>
               </div>
@@ -218,7 +488,7 @@
               <div class="stat-label">років досвіду</div>
             </div>
             <div class="stat">
-              <div class="stat-number">1000+</div>
+              <div class="stat-number">250+</div>
               <div class="stat-label">справ вирішено</div>
             </div>
             <div class="stat">
@@ -238,68 +508,103 @@
     <section id="team" class="team">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Наша команда</h2>
+          <div class="section-badge">Професіонали</div>
+          <h2 class="section-title">
+            Наша <span class="text-accent">команда</span>
+          </h2>
           <p class="section-description">
-            Досвідчені професіонали у сфері права
+            Досвідчені адвокати та юристи з бездоганною репутацією
           </p>
         </div>
         <div class="team-grid">
           <div class="team-member">
             <div class="member-photo">
-              <div class="photo-placeholder">ОП</div>
+              <div class="photo-placeholder">ВП</div>
+              <div class="member-badge">Керуючий партнер</div>
             </div>
             <div class="member-info">
-              <h3>Олексій Петренко</h3>
+              <h3>Віталій Полегенький</h3>
               <p class="member-position">Керуючий партнер</p>
               <p class="member-specialization">Кримінальне та цивільне право</p>
-              <div class="member-experience">
-                <span>Досвід: 18 років</span>
+              <div class="member-stats">
+                <div class="member-stat">
+                  <span class="stat-value">18</span>
+                  <span class="stat-label">років досвіду</span>
+                </div>
+                <div class="member-stat">
+                  <span class="stat-value">350+</span>
+                  <span class="stat-label">справ</span>
+                </div>
               </div>
             </div>
           </div>
           <div class="team-member">
             <div class="member-photo">
-              <div class="photo-placeholder">МК</div>
+              <div class="photo-placeholder">ІП</div>
+              <div class="member-badge">Старший партнер</div>
             </div>
             <div class="member-info">
-              <h3>Марія Коваленко</h3>
+              <h3>Іван Палун</h3>
               <p class="member-position">Старший партнер</p>
               <p class="member-specialization">
                 Господарське та корпоративне право
               </p>
-              <div class="member-experience">
-                <span>Досвід: 14 років</span>
+              <div class="member-stats">
+                <div class="member-stat">
+                  <span class="stat-value">14</span>
+                  <span class="stat-label">років досвіду</span>
+                </div>
+                <div class="member-stat">
+                  <span class="stat-value">280+</span>
+                  <span class="stat-label">справ</span>
+                </div>
               </div>
             </div>
           </div>
           <div class="team-member">
             <div class="member-photo">
-              <div class="photo-placeholder">АС</div>
+              <div class="photo-placeholder">ВП</div>
+              <div class="member-badge">Партнер</div>
             </div>
             <div class="member-info">
-              <h3>Андрій Сидоренко</h3>
+              <h3>Вероніка Полегенька</h3>
               <p class="member-position">Партнер</p>
               <p class="member-specialization">
                 Адміністративне та земельне право
               </p>
-              <div class="member-experience">
-                <span>Досвід: 12 років</span>
+              <div class="member-stats">
+                <div class="member-stat">
+                  <span class="stat-value">12</span>
+                  <span class="stat-label">років досвіду</span>
+                </div>
+                <div class="member-stat">
+                  <span class="stat-value">220+</span>
+                  <span class="stat-label">справ</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="team-member">
-            <div class="member-photo">
-              <div class="photo-placeholder">ТБ</div>
-            </div>
-            <div class="member-info">
-              <h3>Тетяна Білоус</h3>
-              <p class="member-position">Адвокат</p>
-              <p class="member-specialization">Сімейне та трудове право</p>
-              <div class="member-experience">
-                <span>Досвід: 8 років</span>
+          <!-- <div class="team-member">
+          <div class="member-photo">
+            <div class="photo-placeholder">ТБ</div>
+            <div class="member-badge">Адвокат</div>
+          </div>
+          <div class="member-info">
+            <h3>Тетяна Білоус</h3>
+            <p class="member-position">Адвокат</p>
+            <p class="member-specialization">Сімейне та трудове право</p>
+            <div class="member-stats">
+              <div class="member-stat">
+                <span class="stat-value">8</span>
+                <span class="stat-label">років досвіду</span>
+              </div>
+              <div class="member-stat">
+                <span class="stat-value">150+</span>
+                <span class="stat-label">справ</span>
               </div>
             </div>
           </div>
+        </div> -->
         </div>
       </div>
     </section>
@@ -308,23 +613,74 @@
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Контакти</h2>
+          <div class="section-badge">Зв'язок</div>
+          <h2 class="section-title">
+            Наші <span class="text-accent">контакти</span>
+          </h2>
           <p class="section-description">
-            Зв'яжіться з нами для безкоштовної консультації
+            Зв'яжіться з нами для отримання професійної юридичної консультації
           </p>
         </div>
         <div class="contact-content">
           <div class="contact-info">
             <div class="contact-item">
-              <div class="contact-icon">📍</div>
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5 7 1 12 1S21 5 21 10Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
               <div class="contact-details">
-                <h4>Адреса</h4>
-                <p>м. Київ, вул. Хрещатик, 25, оф. 10</p>
-                <p>01001, Україна</p>
+                <h4>Наша адреса</h4>
+                <p>м. Одеса</p>
+                <p>офіс 1001, 01001, Україна</p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">📞</div>
+              <div class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 
+                    19.79 0 0 1-8.63-3.07 19.5 
+                    19.5 0 0 1-6-6 19.79 
+                    19.79 0 0 1-3.07-8.63A2 
+                    2 0 0 1 4.11 2h3a2 2 
+                    0 0 1 2 1.72c.13 1.21.39 
+                    2.39.78 3.53a2 2 0 0 1-.45 
+                    2.11L8.09 10.91a16 
+                    16 0 0 0 6 6l1.55-1.55a2 
+                    2 0 0 1 2.11-.45c1.14.39 
+                    2.32.65 3.53.78A2 
+                    2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
               <div class="contact-details">
                 <h4>Телефони</h4>
                 <p><a href="tel:+380501234567">+38 (050) 123-45-67</a></p>
@@ -332,9 +688,28 @@
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">✉️</div>
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M22 6L12 13L2 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
               <div class="contact-details">
-                <h4>Email</h4>
+                <h4>Електронна пошта</h4>
                 <p>
                   <a href="mailto:info@pravzahyst.com">info@pravzahyst.com</a>
                 </p>
@@ -346,42 +721,284 @@
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">🕒</div>
+              <div class="contact-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 6V12L16 14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
               <div class="contact-details">
                 <h4>Режим роботи</h4>
-                <p>Пн-Пт: 9:00 - 18:00</p>
-                <p>Сб: 10:00 - 15:00</p>
+                <p>Пн-Пт: 9:00 - 19:00</p>
+                <p>Сб: 10:00 - 16:00</p>
                 <p>Нд: за домовленістю</p>
               </div>
             </div>
           </div>
           <div class="contact-form">
-            <h3>Безкоштовна консультація</h3>
-            <form id="contactForm">
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Ваше ім'я"
-                  required
-                />
+            <div class="form-header">
+              <h3>Безкоштовна консультація</h3>
+              <p>
+                Отримайте професійну юридичну консультацію від наших експертів
+              </p>
+            </div>
+            <form
+              id="contactForm"
+              action="https://formsubmit.co/krokodil94dynamo@gmail.com"
+              method="POST"
+            >
+              <!-- Налаштування FormSubmit -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="Нова заявка з сайту - Правовий захист"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Повне ім'я *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Номер телефону *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
               </div>
+
               <div class="form-group">
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Номер телефону"
-                  required
-                />
+                <label for="email">Електронна пошта</label>
+                <input type="email" id="email" name="email" />
               </div>
-              <div class="form-group"></div>
+
+              <div class="form-group">
+                <label for="service">Тип послуги *</label>
+                <select id="service" name="service" required>
+                  <option value="">Оберіть галузь права</option>
+                  <option value="civil">Цивільне право</option>
+                  <option value="criminal">Кримінальне право</option>
+                  <option value="business">Господарське право</option>
+                  <option value="real-estate">Нерухомість</option>
+                  <option value="labor">Трудове право</option>
+                  <option value="administrative">Адміністративне право</option>
+                  <option value="other">Інше</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Опис ситуації</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Відправити</button>
             </form>
+
+            <!-- Тут буде виводитись повідомлення -->
+            <div id="formMessage"></div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <div class="footer-logo">
+              <div class="logo-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="logo-text">
+                <h3>Альбатраст</h3>
+                <p>Адвокатське об'єднання</p>
+              </div>
+            </div>
+            <p class="footer-description">
+              Професійна юридична допомога з 2008 року. Ми захищаємо ваші права
+              та інтереси у всіх інстанціях з гарантією найвищої якості послуг.
+            </p>
+            <div class="footer-certifications">
+              <div class="cert-item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Ліцензовано</span>
+              </div>
+              <div class="cert-item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M8 12L11 15L16 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                <span>Сертифіковано</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h4>Послуги</h4>
+            <ul>
+              <li><a href="#services">Цивільне право</a></li>
+              <li><a href="#services">Кримінальне право</a></li>
+              <li><a href="#services">Господарське право</a></li>
+              <li><a href="#services">Нерухомість</a></li>
+              <li><a href="#services">Трудове право</a></li>
+              <li><a href="#services">Адміністративне право</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Контакти</h4>
+            <ul class="contact-list">
+              <li>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5 7 1 12 1S21 5 21 10Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                <span>м. Одеса</span>
+              </li>
+              <li>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     width="16" height="16" 
+     viewBox="0 0 24 24" 
+     fill="none" 
+     stroke="currentColor" 
+     stroke-width="2" 
+     stroke-linecap="round" 
+     stroke-linejoin="round">
+  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 
+           19.79 0 0 1-8.63-3.07 19.5 
+           19.5 0 0 1-6-6 19.79 
+           19.79 0 0 1-3.07-8.63A2 
+           2 0 0 1 4.11 2h3a2 2 
+           0 0 1 2 1.72c.13 1.21.39 
+           2.39.78 3.53a2 2 0 0 1-.45 
+           2.11L8.09 10.91a16 
+           16 0 0 0 6 6l1.55-1.55a2 
+           2 0 0 1 2.11-.45c1.14.39 
+           2.32.65 3.53.78A2 
+           2 0 0 1 22 16.92z"/>
+</svg>
+
+                <a href="tel:+380501234567">+38 (050) 123-45-67</a>
+              </li>
+              <li>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+                <a href="mailto:info@pravzahyst.com">info@pravzahyst.com</a>
+              </li>
+            </ul>
+
+            <h4 style="margin-top: 24px">Компанія</h4>
+            <ul>
+              <li><a href="#about">Про нас</a></li>
+              <li><a href="#team">Наша команда</a></li>
+              <li><a href="#contact">Консультація</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>
+              &copy; 2024 Адвокатське об'єднання "Альбатраст". Всі права
+              захищені.
+            </p>
+            <div class="footer-legal">
+              <a href="#" class="link">Політика конфіденційності</a>
+              <a href="#" class="link">Умови використання</a>
+              <a href="#" class="link">Правова інформація</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="src/script.js"></script>
   </body>
 </html>
