@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
       if (target) {
-        const headerOffset = 80;
+        // Вычисляем отступ по текущей высоте фиксированного хедера,
+        // чтобы целевой блок не оказывался за шапкой
+        const headerOffset = header ? header.offsetHeight + 16 : 80;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition =
           elementPosition + window.pageYOffset - headerOffset;
@@ -70,8 +72,52 @@ document.addEventListener("DOMContentLoaded", function () {
           top: offsetPosition,
           behavior: "smooth",
         });
+
+        // Додаємо клас is-target до цільової карточки та видаляємо з інших
+        document
+          .querySelectorAll(".service-card.is-target")
+          .forEach((el) => el.classList.remove("is-target"));
+        target.classList.add("is-target");
       }
     });
+  });
+
+  // Якщо сторінка була відкрита з hash у URL, додаємо is-target до відповідної карточки
+  if (window.location.hash) {
+    const initialTarget = document.querySelector(window.location.hash);
+    if (initialTarget && initialTarget.classList.contains("service-card")) {
+      document
+        .querySelectorAll(".service-card.is-target")
+        .forEach((el) => el.classList.remove("is-target"));
+      initialTarget.classList.add("is-target");
+    }
+  }
+
+  // Видаляємо підсвічення при клікуванні на інші елементи
+  document.addEventListener("click", function (e) {
+    const isAnchor = e.target.closest('a[href^="#"]');
+    const isServiceCard = e.target.closest(".service-card");
+
+    // Якщо клік не на якорь та не всередині карточки, видаляємо підсвічення та hash
+    if (!isAnchor && !isServiceCard) {
+      // Видаляємо клас is-target з усіх карточок
+      document
+        .querySelectorAll(".service-card.is-target")
+        .forEach((el) => el.classList.remove("is-target"));
+      // Якщо був hash у URL (через старі дії), видаляємо його без прокрутки
+      if (window.location.hash) {
+        if (history.replaceState) {
+          history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search,
+          );
+        } else {
+          // Резервний варіант — може спричинити прокрутку
+          window.location.hash = "";
+        }
+      }
+    }
   });
 
   // Contact form handling
@@ -99,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!phoneRegex.test(phone)) {
       showNotification(
         "Будь ласка, введіть корректний номер телефону",
-        "error"
+        "error",
       );
       return;
     }
@@ -129,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       showNotification(
         "Дякуємо! Ваш запит надіслано. Ми зв'яжемося з вами найближчим часом.",
-        "success"
+        "success",
       );
       contactForm.reset();
     }, 2000);
@@ -170,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   );
 
   if (statsSection) {
@@ -181,12 +227,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const stats = [
       {
         element: document.querySelector(".stat:nth-child(1) .stat-number"),
-        target: 15,
+        target: 8,
         suffix: "+",
       },
       {
         element: document.querySelector(".stat:nth-child(2) .stat-number"),
-        target: 250,
+        target: 114,
         suffix: "+",
       },
       {
@@ -358,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (p4) formatted += "-" + p4;
             if (p5) formatted += "-" + p5;
             return formatted;
-          }
+          },
         );
       }
 
@@ -457,32 +503,36 @@ document.addEventListener("DOMContentLoaded", function () {
   pulseStyleSheet.textContent = pulseStyles;
   document.head.appendChild(pulseStyleSheet);
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // блокуємо стандартне відправлення
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // блокуємо стандартне відправлення
 
-  const form = event.target;
-  const formData = new FormData(form);
+      const form = event.target;
+      const formData = new FormData(form);
 
-  fetch(form.action, {
-    method: form.method,
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      document.getElementById("formMessage").innerHTML =
-        '<p class="success-message">✅ Форма успішно відправлена!</p>';
-      form.reset(); // очистка форми
-    } else {
-      document.getElementById("formMessage").innerHTML =
-        '<p class="error-message">❌ Сталася помилка. Спробуйте ще раз.</p>';
-    }
-  }).catch(error => {
-    document.getElementById("formMessage").innerHTML =
-      '<p class="error-message">⚠️ Помилка зʼєднання.</p>';
-  });
-});
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+        .then((response) => {
+          if (response.ok) {
+            document.getElementById("formMessage").innerHTML =
+              '<p class="success-message">✅ Форма успішно відправлена!</p>';
+            form.reset(); // очистка форми
+          } else {
+            document.getElementById("formMessage").innerHTML =
+              '<p class="error-message">❌ Сталася помилка. Спробуйте ще раз.</p>';
+          }
+        })
+        .catch((error) => {
+          document.getElementById("formMessage").innerHTML =
+            '<p class="error-message">⚠️ Помилка зʼєднання.</p>';
+        });
+    });
 
   console.log(
-    'Сайт адвокатського об\'єднання "Правовий захист" завантажено успішно!'
+    'Сайт адвокатського об\'єднання "ALBATRUST" завантажено успішно!',
   );
 });
