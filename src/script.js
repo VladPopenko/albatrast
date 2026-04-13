@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Close mobile menu when clicking on menu buttons
+  document.querySelectorAll(".mobile-menu-buttons a").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+
   // Header scroll effect
   const header = document.querySelector(".header");
   let lastScrollTop = 0;
