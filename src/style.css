@@ -33,6 +33,10 @@ body {
   background: white;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -261,20 +265,44 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 4px;
+  gap: 0;
   padding: 8px;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1101;
+  margin-left: auto;
 }
 
 .hamburger span {
-  width: 25px;
+  width: 26px;
   height: 3px;
   background: #0B1B32;
   transition: all 0.3s ease;
   border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+  top: 11px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 29px;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  top: 20px;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -282,8 +310,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  top: 20px;
+  transform: translateX(-50%) rotate(-45deg);
 }
+
+/* Hide mobile menu buttons on desktop by default */
+.mobile-menu-buttons {
+  display: none;
+}
+
 /* #endregion */
 
 /* #region ALBATRUST Animated Section */
@@ -504,6 +539,7 @@ h1, h2, h3, h4, h5, h6 {
     background-attachment: scroll;
   }
 
+  /* На планшетах скриваємо мобільні кнопки */
   .mobile-menu-buttons {
     display: none !important;
   }
@@ -545,102 +581,118 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
+  /* Скриваємо дві кнопки з хедера */
+  .nav > .btn-secondary.btn-sm,
+  .nav > .btn-primary.btn-sm {
+    display: none !important;
+  }
+
+  /* Убираємо горизонтальний скролл */
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    overflow: visible;
+  }
+
+  .header-content {
+    overflow: visible;
+  }
+
+  /* Меню設置 */
   .hamburger {
     display: flex;
     order: 3;
+    flex-shrink: 0;
+    margin-left: auto;
   }
 
   .nav-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    left: auto;
     background: white;
     flex-direction: column;
-    padding: 20px;
-    gap: 12px;
-    border-bottom: 1px solid #e0e0e0;
-    z-index: 999;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 88px 20px 24px;
+    gap: 16px;
+    border-left: 1px solid #e0e0e0;
+    z-index: 1100;
+    width: min(320px, 100vw);
+    max-width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    transition: right 0.3s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+    overflow-y: auto;
   }
 
   .nav-menu.active {
-    display: flex;
+    right: 0;
   }
 
+  /* Показуємо мобільні кнопки в меню */
   .mobile-menu-buttons {
     display: list-item !important;
-    padding: 8px 0 !important;
+    list-style: none;
+    padding: 4px 0 !important;
     border-top: 1px solid #e0e0e0;
     margin-top: 8px !important;
   }
 
+  .mobile-menu-buttons a {
+    width: 100%;
+    display: flex !important;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu-buttons .btn-secondary {
+    background: white !important;
+    color: #0B1B32 !important;
+    border: 2px solid #0B1B32 !important;
+  }
+
+  .mobile-menu-buttons .btn-primary {
+    background: #0B1B32 !important;
+    color: white !important;
+    border: none !important;
+  }
+
+  .mobile-menu-buttons svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Знизуємо хедер */
   .header-content {
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 8px 12px;
   }
 
   .nav {
     width: 100%;
-    gap: 8px;
+    gap: 4px;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
+    position: relative;
   }
 
-  .nav-link {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 14px;
-  }
-
-  .btn-sm {
-    padding: 6px 10px;
-    font-size: 11px;
-    white-space: nowrap;
-    gap: 4px;
-  }
-
-  .nav > .btn-secondary.btn-sm {
-    padding: 6px 10px;
-    font-size: 10px;
-    order: 1;
-  }
-
-  .nav > .btn-primary.btn-sm {
-    display: none;
-  }
-
-  .nav .btn-secondary.btn-sm svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  .mobile-menu-buttons {
-    display: none !important;
-  }
-
-  .mobile-menu-buttons a {
-    width: 100%;
-    display: block !important;
-    padding: 12px 16px;
-    margin-top: 8px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-  }
-
-  .mobile-menu-buttons .btn-secondary {
-    background: white;
-    color: #0B1B32;
-    border: 2px solid #0B1B32;
-  }
-
-  .mobile-menu-buttons .btn-primary {
-    background: #0B1B32;
-    color: white;
-  }
-
+  /* Hero секція */
   .hero {
     min-height: 85vh;
     padding-top: 80px;
@@ -686,6 +738,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 14px;
   }
 
+  /* Решта секцій */
   .services-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1329,8 +1382,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .contact-content {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 40px;
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .contact-form {
@@ -1448,14 +1504,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (max-width: 768px) {
-  .hero,
-  .main-content,
-  main > section:first-child {
-    padding-top: 100px !important; /* Збільште це значення при потребі */
-  }
-}
-
 @media (max-width: 480px) {
   .hero,
   .main-content, 
@@ -1539,33 +1587,37 @@ h1, h2, h3, h4, h5, h6 {
   
   .hamburger {
     display: flex;
+    margin-left: auto;
   }
   
   .nav-menu {
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background: rgba(26, 54, 93, 0.98);
+    top: 0;
+    right: -100%;
+    left: auto;
+    width: min(360px, 100vw);
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding-top: 60px;
-    transition: left 0.3s ease;
+    align-items: stretch;
+    padding: 88px 20px 24px;
+    transition: right 0.3s ease;
     backdrop-filter: blur(20px);
+    gap: 16px;
   }
   
   .nav-menu.active {
-    left: 0;
+    right: 0;
   }
   
   .nav-menu li {
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
   
   .nav-link {
     font-size: 18px;
+    display: block;
+    padding: 10px 0;
   }
   
   .hero-title {
@@ -1651,8 +1703,55 @@ h1, h2, h3, h4, h5, h6 {
     padding: 24px 20px;
   }
   
+  .contact-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
   .contact-form {
     padding: 24px 16px;
+  }
+  
+  /* Prevent horizontal scroll on contact form */
+  .contact-form form {
+    overflow: hidden;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Contact info items on one line */
+  .contact-info {
+    align-items: center;
+  }
+  
+  .contact-item {
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .contact-icon {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .contact-details h4 {
+    font-size: 1rem;
+  }
+  
+  .contact-details p {
+    font-size: 0.9rem;
+    word-break: break-word;
   }
   
   .team-member {
@@ -1676,16 +1775,14 @@ h1, h2, h3, h4, h5, h6 {
     gap: 16px;
   }
   
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+  /* Center contact list in footer */
+  .contact-list {
+    text-align: center;
   }
   
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+  .contact-list li {
+    justify-content: center;
+    text-align: center;
   }
 }
 

@@ -3,26 +3,43 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu toggle
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("navMenu");
+  const closeMobileMenu = () => {
+    if (!hamburger || !navMenu) return;
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  };
 
-  hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", function () {
+      const isActive = hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active", isActive);
+      document.body.classList.toggle("menu-open", isActive);
+    });
+  }
 
   // Close mobile menu when clicking on a link
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
+      closeMobileMenu();
     });
   });
 
   // Close mobile menu when clicking on menu buttons
   document.querySelectorAll(".mobile-menu-buttons a").forEach((btn) => {
     btn.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
+      closeMobileMenu();
     });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!hamburger || !navMenu) return;
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedHamburger = hamburger.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedHamburger) {
+      closeMobileMenu();
+    }
   });
 
   // Header scroll effect
@@ -235,12 +252,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const stats = [
       {
         element: document.querySelector(".stat:nth-child(1) .stat-number"),
-        target: 8,
+        target: 10,
         suffix: "+",
       },
       {
         element: document.querySelector(".stat:nth-child(2) .stat-number"),
-        target: 114,
+        target: 1000,
         suffix: "+",
       },
       {
